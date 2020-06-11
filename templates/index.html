@@ -50,7 +50,7 @@
 <br>
 <div class="container">
   <form action = "/analyze/" method = "post">
-    {{ csrf_field() }}
+    {!! csrf_token() !!} 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Enter Your Text Here and let Textutils do the Magic.</label>
     <textarea name = "text" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
