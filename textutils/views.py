@@ -10,19 +10,16 @@ def contact(request):
     return render(request, 'contact.html')
 
 def analyze(request):
+    
+    djtext = request.GET.get('text','default')
 
     
-  if request.method == "post":
-    
-    djtext = request.POST.get('text','default')
-
-    
-    removepunc = request.POST.get('removepunc', 'off')
-    capitalize = request.POST.get('capitalize', 'off')
-    removespace = request.POST.get('removespace', 'off')
-    removeline = request.POST.get('removeline', 'off')
-    countchar = request.POST.get('charcount', 'off')
-    fullcaps = request.POST.get('fullcaps', 'off')
+    removepunc = request.GET.get('removepunc', 'off')
+    capitalize = request.GET.get('capitalize', 'off')
+    removespace = request.GET.get('removespace', 'off')
+    removeline = request.GET.get('removeline', 'off')
+    countchar = request.GET.get('charcount', 'off')
+    fullcaps = request.GET.get('fullcaps', 'off')
     
     punctuations = '''!()-[];:'"\,<>./?@#$%^&*_~{}'''
     analyzed = ""
